@@ -37,8 +37,8 @@ Graph::Graph(string vex, string path) :vexnum(0), arcnum(0), arcs(nullptr) {
 		arcs[i][i] = 0;
 	}
 	//打开文件
-	ifstream inf_vex("景点信息.txt");
-	ifstream inf_path("路径信息.txt");
+	ifstream inf_vex(vex);
+	ifstream inf_path(path);
 	if (!inf_vex.is_open()) {
 		cout << "景点信息文件打开失败！图初始化失败！" << endl;
 	}
@@ -401,6 +401,19 @@ void Graph::print_shortist_path(Vertex v1, Vertex v2) {//打印 顶点v1与v2之间的最
 	}
 	cout << "->" << v2.name;
 	cout << "\t\t\t距离为：" << dist[v1.ID] << endl;
+}
+void Graph::print_shortist_path(Vertex v) {//打印 顶点v到所有能到达的顶点的最短路径 以及距离
+	//先判断顶点是否存在
+	if (!this->vex_exist(v)) {
+		cout << "顶点不存在图中，无法打印最短路径！" << endl;
+		return;
+	}
+	for (int i = 0; i < vexnum; i++) {
+		if (i == v.ID) {
+			continue;
+		}
+		this->print_shortist_path(find_vertex_ID(i), v);
+	}
 }
 void Graph::print_all_path(Vertex v1, Vertex v2) {//打印 从顶点v1到v2之间的所有简单路径
 	if ((!this->vex_exist(v1)) || (!this->vex_exist(v2))) {

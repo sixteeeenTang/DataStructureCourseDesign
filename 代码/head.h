@@ -10,13 +10,13 @@
 #include<algorithm>
 #include<array>
 #include<functional>
-#define INF (9999999)			//è·ç¦»æœ€å¤§å€¼
-#define MAX_VERTEX_NUM 30		//æœ€å¤§é¡¶ç‚¹æ•°
+#define INF (9999999)			//¾àÀë×î´óÖµ
+#define MAX_VERTEX_NUM 30		//×î´ó¶¥µãÊı
 using namespace std;
 /****************************************************************************************************************************
-æœ¬é¡¹ç›®ä¸­çš„å›¾åŸºäºï¼šæ— å‘è¿é€šå›¾
-ç”¨äºæ¨¡æ‹Ÿï¼šæ—…æ¸¸åŒºæ™¯ç‚¹å¯¼æ¸¸ï¼ˆæ—…æ¸¸åŒºå¯è¡¨ç¤ºä¸ºå›¾ï¼Œæ™¯ç‚¹å¯è¡¨ç¤ºä¸ºé¡¶ç‚¹ï¼‰
-ä½œè€…ï¼šsixteenTangï¼ˆgithub:anxiaoronï¼‰
+±¾ÏîÄ¿ÖĞµÄÍ¼»ùÓÚ£ºÎŞÏòÁ¬Í¨Í¼
+ÓÃÓÚÄ£Äâ£ºÂÃÓÎÇø¾°µãµ¼ÓÎ£¨ÂÃÓÎÇø¿É±íÊ¾ÎªÍ¼£¬¾°µã¿É±íÊ¾Îª¶¥µã£©
+×÷Õß£ºsixteenTang£¨github:https://github.com/sixteeeenTang/DataStructureCourseDesign£©
 ****************************************************************************************************************************/
 
 void Stringsplit(const string& str, const string& split, vector<string>& res);
@@ -31,6 +31,7 @@ void fun4();
 void fun5();
 void fun6();
 void fun7();
+void fun8();
 void fun2_1();
 void fun2_2();
 void fun2_3();

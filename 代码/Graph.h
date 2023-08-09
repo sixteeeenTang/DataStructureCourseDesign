@@ -2,43 +2,45 @@
 #include"head.h"
 #include"Vertex.h"
 /****************************************************************************************************************************
-æœ¬é¡¹ç›®ä¸­çš„å›¾åŸºäºï¼šæ— å‘è¿é€šå›¾
-ç”¨äºæ¨¡æ‹Ÿï¼šæ—…æ¸¸åŒºæ™¯ç‚¹å¯¼æ¸¸ï¼ˆæ—…æ¸¸åŒºå¯è¡¨ç¤ºä¸ºå›¾ï¼Œæ™¯ç‚¹å¯è¡¨ç¤ºä¸ºé¡¶ç‚¹ï¼‰
-ä½œè€…ï¼šsixteenTangï¼ˆgithub:anxiaoronï¼‰
+±¾ÏîÄ¿ÖĞµÄÍ¼»ùÓÚ£ºÎŞÏòÁ¬Í¨Í¼
+ÓÃÓÚÄ£Äâ£ºÂÃÓÎÇø¾°µãµ¼ÓÎ£¨ÂÃÓÎÇø¿É±íÊ¾ÎªÍ¼£¬¾°µã¿É±íÊ¾Îª¶¥µã£©
+×÷Õß£ºsixteenTang£¨github:https://github.com/sixteeeenTang/DataStructureCourseDesign£©
 ****************************************************************************************************************************/
-class Graph {//æ— å‘è¿é€šå›¾
+class Graph {//ÎŞÏòÁ¬Í¨Í¼
 private:
-	friend ostream& operator<<(ostream& os, const Graph& p);//å£°æ˜ operator<< ä¸ºå‹å…ƒå‡½æ•°
-	size_t vexnum, arcnum;//å›¾ä¸­é¡¶ç‚¹æ•°å’Œå¼§æ•°
-	vector<Vertex> vexs;//é¡¶ç‚¹å‘é‡
-	int** arcs;//é‚»æ¥çŸ©é˜µ
+	friend ostream& operator<<(ostream& os, const Graph& p);//ÉùÃ÷ operator<< ÎªÓÑÔªº¯Êı
+	size_t vexnum, arcnum;//Í¼ÖĞ¶¥µãÊıºÍ»¡Êı
+	vector<Vertex> vexs;//¶¥µãÏòÁ¿
+	int** arcs;//ÁÚ½Ó¾ØÕó
 
 public:
-	Graph(string vex = "æ™¯ç‚¹ä¿¡æ¯.txt", string path = "è·¯å¾„ä¿¡æ¯.txt");
+	Graph(string vex = "¾°µãĞÅÏ¢.txt", string path = "Â·¾¶ĞÅÏ¢.txt");
 	Graph(const Graph& g);
 	~Graph();
 	size_t getVexnum() { return vexnum; }
 	size_t getArcnum() { return arcnum; }
-	Vertex find_vertex_ID(int ID);//é€šè¿‡ IDæŸ¥æ‰¾é¡¶ç‚¹
-	Vertex find_vertex_name(string name);//é€šè¿‡ nameæŸ¥æ‰¾é¡¶ç‚¹
-	bool vex_exist(Vertex v);//é€šè¿‡ åç§°æ¥åˆ¤æ–­æ­¤é¡¶ç‚¹æ˜¯å¦å·²ç»å­˜åœ¨
-	bool vex_exist(int ID);//é€šè¿‡ IDæ¥åˆ¤æ–­æ­¤é¡¶ç‚¹æ˜¯å¦å·²ç»å­˜åœ¨
-	void update_Graph();//æ›´æ–° å›¾ä¸­çš„é¡¶ç‚¹ä¿¡æ¯å’Œå¼§ä¿¡æ¯åˆ°æ–‡ä»¶ä¸­
-	void add_vex(Vertex v);//æ·»åŠ  é¡¶ç‚¹
-	void add_arc(Vertex v1, Vertex v2, int weight);//æ·»åŠ  å¼§
-	void delete_vex(Vertex v);//åˆ é™¤ é¡¶ç‚¹
-	void delete_arc(Vertex v1, Vertex v2);//åˆ é™¤ å¼§ï¼ˆè¯¥å‡½æ•°ä¸æç¤ºå¼§ä¸å­˜åœ¨æ—¶å€™çš„é”™è¯¯ï¼Œå› ä¸ºå®ƒå°†åœ¨ delete_vex() ä¸­è°ƒç”¨ï¼‰
-	void revise_vex_name(Vertex v, string n);//ä¿®æ”¹ é¡¶ç‚¹åç§°
-	void revise_vex_information(Vertex v, string inf);//ä¿®æ”¹ é¡¶ç‚¹ä»‹ç»
-	void revise_arc(Vertex v1, Vertex v2, int weight);//ä¿®æ”¹ å¼§çš„ä¿¡æ¯
+	Vertex find_vertex_ID(int ID);//Í¨¹ı ID²éÕÒ¶¥µã
+	Vertex find_vertex_name(string name);//Í¨¹ı name²éÕÒ¶¥µã
+	bool vex_exist(Vertex v);//Í¨¹ı Ãû³ÆÀ´ÅĞ¶Ï´Ë¶¥µãÊÇ·ñÒÑ¾­´æÔÚ
+	bool vex_exist(int ID);//Í¨¹ı IDÀ´ÅĞ¶Ï´Ë¶¥µãÊÇ·ñÒÑ¾­´æÔÚ
+	void update_Graph();//¸üĞÂ Í¼ÖĞµÄ¶¥µãĞÅÏ¢ºÍ»¡ĞÅÏ¢µ½ÎÄ¼şÖĞ
+	void add_vex(Vertex v);//Ìí¼Ó ¶¥µã
+	void add_arc(Vertex v1, Vertex v2, int weight);//Ìí¼Ó »¡
+	void delete_vex(Vertex v);//É¾³ı ¶¥µã
+	void delete_arc(Vertex v1, Vertex v2);//É¾³ı »¡£¨¸Ãº¯Êı²»ÌáÊ¾»¡²»´æÔÚÊ±ºòµÄ´íÎó£¬ÒòÎªËü½«ÔÚ delete_vex() ÖĞµ÷ÓÃ£©
+	void revise_vex_name(Vertex v, string n);//ĞŞ¸Ä ¶¥µãÃû³Æ
+	void revise_vex_information(Vertex v, string inf);//ĞŞ¸Ä ¶¥µã½éÉÜ
+	void revise_arc(Vertex v1, Vertex v2, int weight);//ĞŞ¸Ä »¡µÄĞÅÏ¢
 	/***********************************************************************************************************************/
 	void demo_lamda(int n);
 	/***********************************************************************************************************************/
-	void print_nearby_vex(Vertex v);//æ‰“å° ä¸ v ç›¸é‚»çš„é¡¶ç‚¹
-	void Dijkstra(Vertex v, int* prev, int* dist);//Dijkstraç®—æ³•
-	void print_all_vertex();//æ‰“å° æ‰€æœ‰é¡¶ç‚¹çš„ä¿¡æ¯
-	void print_shortist_path(Vertex v1, Vertex v2);//æ‰“å° é¡¶ç‚¹v1ä¸v2ä¹‹é—´çš„æœ€çŸ­è·¯å¾„ ä»¥åŠè·ç¦»
-	void print_all_path(Vertex v1, Vertex v2);//æ‰“å° é¡¶ç‚¹v1åˆ°v2ä¹‹é—´çš„æ‰€æœ‰ç®€å•è·¯å¾„
-	void print_recommended_path(Vertex v);//æ‰“å° ä»¥é¡¶ç‚¹vä¸ºèµ·ç‚¹éå†æ‰€æœ‰é¡¶ç‚¹
+	void print_nearby_vex(Vertex v);//´òÓ¡ Óë v ÏàÁÚµÄ¶¥µã
+	void Dijkstra(Vertex v, int* prev, int* dist);//DijkstraËã·¨
+	void print_all_vertex();//´òÓ¡ ËùÓĞ¶¥µãµÄĞÅÏ¢
+	void print_shortist_path(Vertex v1, Vertex v2);//´òÓ¡ ¶¥µãv1Óëv2Ö®¼äµÄ×î¶ÌÂ·¾¶ ÒÔ¼°¾àÀë
+	void print_shortist_path(Vertex v1);//´òÓ¡ ¶¥µãvµ½ËùÓĞÄÜµ½´ïµÄ¶¥µãµÄ×î¶ÌÂ·¾¶ ÒÔ¼°¾àÀë
+	void print_all_path(Vertex v1, Vertex v2);//´òÓ¡ ¶¥µãv1µ½v2Ö®¼äµÄËùÓĞ¼òµ¥Â·¾¶
+	void print_recommended_path(Vertex v);//´òÓ¡ ÒÔ¶¥µãvÎªÆğµã±éÀúËùÓĞ¶¥µã
 };
+
 

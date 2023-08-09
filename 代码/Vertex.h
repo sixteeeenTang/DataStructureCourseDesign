@@ -1,27 +1,26 @@
 #pragma once
 #include"head.h"
 /****************************************************************************************************************************
-æœ¬é¡¹ç›®ä¸­çš„å›¾åŸºäºï¼šæ— å‘è¿é€šå›¾
-ç”¨äºæ¨¡æ‹Ÿï¼šæ—…æ¸¸åŒºæ™¯ç‚¹å¯¼æ¸¸ï¼ˆæ—…æ¸¸åŒºå¯è¡¨ç¤ºä¸ºå›¾ï¼Œæ™¯ç‚¹å¯è¡¨ç¤ºä¸ºé¡¶ç‚¹ï¼‰
-ä½œè€…ï¼šsixteenTangï¼ˆgithub:anxiaoronï¼‰
+±¾ÏîÄ¿ÖĞµÄÍ¼»ùÓÚ£ºÎŞÏòÁ¬Í¨Í¼
+ÓÃÓÚÄ£Äâ£ºÂÃÓÎÇø¾°µãµ¼ÓÎ£¨ÂÃÓÎÇø¿É±íÊ¾ÎªÍ¼£¬¾°µã¿É±íÊ¾Îª¶¥µã£©
+×÷Õß£ºsixteenTang£¨github:https://github.com/sixteeeenTang/DataStructureCourseDesign£©
 ****************************************************************************************************************************/
 class Vertex {
 private:
-	int ID;					//æ™¯ç‚¹å”¯ä¸€æ ‡è¯†ID
-	string name;			//æ™¯ç‚¹åç§°
-	string information;		//æ™¯ç‚¹ä»‹ç»
-	friend class Graph;		//å£°æ˜ Graphç±» ä¸ºå‹å…ƒç±»
+	int ID;					//¾°µãÎ¨Ò»±êÊ¶ID
+	string name;			//¾°µãÃû³Æ
+	string information;		//¾°µã½éÉÜ
+	friend class Graph;		//ÉùÃ÷ GraphÀà ÎªÓÑÔªÀà
 
 public:
-	friend ostream& operator<<(ostream& os, const Vertex& v);//å£°æ˜ operator<< ä¸ºå‹å…ƒå‡½æ•°
+	friend ostream& operator<<(ostream& os, const Vertex& v);//ÉùÃ÷ operator<< ÎªÓÑÔªº¯Êı
 	Vertex(int ID = -1, string name = "NULL", string information = "NULL") :ID(ID), name(name), information(information) { ; }
-	Vertex(string s);//ç”¨æ–‡ä»¶å†…å®¹åˆå§‹åŒ–å›¾æ—¶ï¼Œåœ¨è¯»å–æ–‡ä»¶çš„æ¯ä¸€è¡Œæ—¶ï¼Œç›´æ¥ç”¨è¯»å–åˆ°çš„ä¸€è¡Œåˆå§‹åŒ– vertex
+	Vertex(string s);//ÓÃÎÄ¼şÄÚÈİ³õÊ¼»¯Í¼Ê±£¬ÔÚ¶ÁÈ¡ÎÄ¼şµÄÃ¿Ò»ĞĞÊ±£¬Ö±½ÓÓÃ¶ÁÈ¡µ½µÄÒ»ĞĞ³õÊ¼»¯ vertex
 	Vertex(const Vertex& v) :ID(v.ID), name(v.name), information(v.information) { ; }
 	~Vertex() { ; }
 	int getID() { return ID; }
 	string getName() { return name; }
 	string getInformation() { return information; }
-	//void out_print();
 	Vertex& operator=(const Vertex& v);
 };
 

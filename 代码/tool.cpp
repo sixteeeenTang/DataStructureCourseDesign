@@ -150,7 +150,7 @@ void fun2_6() {
 	string name, inf;
 	cin >> name;
 	cout << "请输入您想要将其介绍修改为的内容：";
-
+	cin >> inf;
 	g.revise_vex_information(g.find_vertex_name(name), inf);
 }
 void fun2_7() {
@@ -175,14 +175,24 @@ void fun3() {
 }
 void fun4() {
 	Graph g;
+	cout << "请输入您想要查询的最短路径的景点：";
+	string name;
+	cin >> name;
+
+	g.print_shortist_path(g.find_vertex_name(name));
+	system("pause");
+}
+void fun5() {
+	Graph g;
 	cout << "请输入您想要查询的最短路径的两个端点景点：";
 	string name1, name2;
 	cin >> name1 >> name2;
 
+	//g.print_shortist_path(g.find_vertex_name(name1));
 	g.print_shortist_path(g.find_vertex_name(name1), g.find_vertex_name(name2));
 	system("pause");
 }
-void fun5() {
+void fun6() {
 	Graph g;
 	cout << "请输入您想要查询的路径的两个端点景点：";
 	string name1, name2;
@@ -191,7 +201,7 @@ void fun5() {
 	g.print_all_path(g.find_vertex_name(name1), g.find_vertex_name(name2));
 	system("pause");
 }
-void fun6() {
+void fun7() {
 	Graph g;
 	cout << "请输入您希望得到的推荐路线的起点：";
 	string name;
@@ -200,7 +210,7 @@ void fun6() {
 	g.print_recommended_path(g.find_vertex_name(name));
 	system("pause");
 }
-void fun7() {
+void fun8() {
 	cout << "感谢您使用本系统！" << endl;
 	cout << "欢迎您下次使用o(*￣▽￣*)o" << endl;
 	exit(1);
@@ -219,10 +229,11 @@ void Menu() {
 	cout << "|-----------------------1、查看所有景点信息------------------------------|" << endl;
 	cout << "|-----------------------2、编辑景点信息----------------------------------|" << endl;
 	cout << "|-----------------------3、查询具体景点信息------------------------------|" << endl;
-	cout << "|-----------------------4、查询两个景点间的最短路径和距离----------------|" << endl;
-	cout << "|-----------------------5、查询两个景点间的所有简单路径和距离------------|" << endl;
-	cout << "|-----------------------6、查询以您指定景点为起点的最佳游览路线----------|" << endl;
-	cout << "|-----------------------7、退出系统--------------------------------------|" << endl;
+	cout << "|-----------------------4、查询从单个景点出发到所有景点的最短路径和距离--|" << endl;
+	cout << "|-----------------------5、查询两个景点间的最短路径和距离----------------|" << endl;
+	cout << "|-----------------------6、查询两个景点间的所有简单路径和距离------------|" << endl;
+	cout << "|-----------------------7、查询以您指定景点为起点的最佳游览路线----------|" << endl;
+	cout << "|-----------------------8、退出系统--------------------------------------|" << endl;
 	cout << "--------------------------------------------------------------------------" << endl;
 	cout << "请输入数字:";
 	int matching;
@@ -250,6 +261,9 @@ void Menu() {
 			break;
 		case 7:
 			fun7();
+			break;
+		case 8:
+			fun8();
 			break;
 		case 999:
 			fun_master();
